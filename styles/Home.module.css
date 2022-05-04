@@ -37,6 +37,18 @@
   text-align: center;
 }
 
+.intro a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.intro a:hover,
+.intro a:focus,
+.intro a:active {
+  text-decoration: underline;
+}
+
 .title {
   margin: 0;
   line-height: 1.15;

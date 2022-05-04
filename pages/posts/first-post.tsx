@@ -4,12 +4,15 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import { Post } from './types';
 import Footer from '../../components/footer';
+import utilStyles from '../../styles/utils.module.css';
 
 export const post: Post = {
   path: 'first-post',
   publishedDate: '2022-05-04',
   title: 'Making this website',
   author: 'Leo Wheelan',
+  description:
+    'A short post outlining the motivation and description of this website',
 };
 
 const FirstPost: NextPage = () => {
@@ -35,21 +38,21 @@ const FirstPost: NextPage = () => {
       <p>
         The site is hosted by{' '}
         <Link href="https://www.netlify.com/">
-          <a>Netlify</a>
+          <a className={utilStyles.link}>Netlify</a>
         </Link>
       </p>
 
       <p>
         I acquired the domain through{' '}
         <Link href="https://www.namecheap.com/">
-          <a>Namecheap</a>
+          <a className={utilStyles.link}>Namecheap</a>
         </Link>
       </p>
 
       <p>
         And I built the content using{' '}
         <Link href="https://nextjs.org/">
-          <a>NextJS</a>
+          <a className={utilStyles.link}>NextJS</a>
         </Link>
       </p>
 

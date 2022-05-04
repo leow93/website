@@ -2,6 +2,12 @@
   padding: 0 2rem;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -26,6 +32,21 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.intro a:hover,
+.intro a:focus,
+.intro a:active {
+  text-decoration: underline;
 }
 
 .title a {

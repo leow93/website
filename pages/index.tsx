@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <section className={utilStyles.headingMd}>
           <p className={styles.intro}>
-            Hello, welcome to my website. I'm a software engineer currently working at <Link href="https://birdie.care">
+            Hello, welcome to my website. I&apos;m a software engineer currently working at <Link href="https://birdie.care">
             <a>Birdie</a>
           </Link>.
           </p>

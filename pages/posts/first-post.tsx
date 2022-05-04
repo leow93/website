@@ -2,19 +2,64 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../../components/layout';
+import { Post } from './types';
+import Footer from '../../components/footer';
+
+export const post: Post = {
+  path: 'first-post',
+  publishedDate: '2022-05-04',
+  title: 'Making this website',
+  author: 'Leo Wheelan',
+};
 
 const FirstPost: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>First Post</title>
+        <title>{post.title}</title>
       </Head>
-      <h1>First Post</h1>
-      <h2>
-        <Link href="/">
-          <a>Back to home</a>
+      <h1>{post.title}</h1>
+      <h4>{new Date(post.publishedDate).toLocaleDateString()}</h4>
+      <h4>Written by {post.author}</h4>
+
+      <h2>Motivation</h2>
+      <p>
+        Despite being a software engineer for around 6 years, I&apos;d never
+        actually deployed a website from scratch before. I saw this as a
+        learning opportunity! I also sometimes enjoy writing articles and hope
+        this site can serve as a repository for these thoughts.
+      </p>
+
+      <h2>Technical details</h2>
+
+      <p>
+        The site is hosted by{' '}
+        <Link href="https://www.netlify.com/">
+          <a>Netlify</a>
         </Link>
-      </h2>
+      </p>
+
+      <p>
+        I acquired the domain through{' '}
+        <Link href="https://www.namecheap.com/">
+          <a>Namecheap</a>
+        </Link>
+      </p>
+
+      <p>
+        And I built the content using{' '}
+        <Link href="https://nextjs.org/">
+          <a>NextJS</a>
+        </Link>
+      </p>
+
+      <Footer>
+        <h3>
+          <Link href="/">
+            <a>Back to home</a>
+          </Link>
+        </h3>
+      </Footer>
     </Layout>
   );
 };

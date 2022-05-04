@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Layout from '../components/layout';
 import Link from 'next/link';
+import Navbar from '../components/navbar';
 
 const MyFace = () => (
   <Image
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Leo Wheelan's website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <header className={styles.header}>
         <MyFace />
         <h1 className={utilStyles.heading2Xl}>Leo Wheelan</h1>

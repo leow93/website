@@ -9,7 +9,6 @@
 }
 
 .main {
-  min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -36,28 +35,6 @@
 
 .intro {
   text-align: center;
-}
-
-.intro a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.intro a:hover,
-.intro a:focus,
-.intro a:active {
-  text-decoration: underline;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
 }
 
 .title {

@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import { Post } from './types';
 import Footer from '../../components/footer';
 import utilStyles from '../../styles/utils.module.css';
+import { Post } from '../api/posts';
 
 export const post: Post = {
   path: 'first-post',
@@ -22,8 +22,12 @@ const FirstPost: NextPage = () => {
         <title>{post.title}</title>
       </Head>
       <h1>{post.title}</h1>
-      <h4>{new Date(post.publishedDate).toLocaleDateString()}</h4>
-      <h4>Written by {post.author}</h4>
+      <div className={utilStyles.row}>
+        <h4 className={utilStyles.lightText}>
+          Published on {new Date(post.publishedDate).toLocaleDateString()}
+        </h4>
+        <h4 className={utilStyles.lightText}>by {post.author}</h4>
+      </div>
 
       <h2>Motivation</h2>
       <p>

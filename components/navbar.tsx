@@ -1,12 +1,17 @@
 import styles from './navbar.module.css';
 import Link from 'next/link';
 
-const Item = ({ name, href }: { name: string; href: string }) => (
-  <Link href={href}>
-    <div className={styles.item}>
-      <a>{name}</a>
-    </div>
-  </Link>
+interface Props {
+  name: string;
+  href: string;
+}
+
+const Item = ({ name, href }: Props) => (
+  <div className={styles.item}>
+    <Link href={href}>
+      <a href={href}>{name}</a>
+    </Link>
+  </div>
 );
 
 const Navbar = () => {

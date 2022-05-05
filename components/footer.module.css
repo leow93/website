@@ -1,7 +1,6 @@
 .footer {
-  position: sticky;
-  bottom: 0;
   padding: 4rem 0;
+  height: 64px;
 }
 
 .footer a {

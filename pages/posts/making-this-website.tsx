@@ -6,12 +6,11 @@ import { Link } from '../../components/link';
 import Navbar from '../../components/navbar';
 
 export const post: Post = {
-  path: 'first-post',
+  path: 'making-this-website',
   publishedDate: '2022-05-04',
   title: 'Making this website',
   author: 'Leo Wheelan',
-  description:
-    'A short post outlining the motivation and description of this website',
+  description: 'A short post outlining the motivation for this website',
 };
 
 const FirstPost: NextPage = () => {

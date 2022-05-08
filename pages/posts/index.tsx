@@ -1,6 +1,6 @@
 import Layout from '../../components/layout';
 import Head from 'next/head';
-import { post as firstPost } from './first-post';
+import { post as firstPost } from './making-this-website';
 import { BlogPostCard } from '../../components/card';
 import React, { useEffect, useState } from 'react';
 import { Post } from '../api/posts';

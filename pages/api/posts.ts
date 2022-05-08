@@ -11,7 +11,7 @@ export interface Post {
 
 const posts: Post[] = [
   {
-    path: 'first-post',
+    path: 'making-this-website',
     publishedDate: '2022-05-04',
     title: 'Making this website',
     author: 'Leo Wheelan',

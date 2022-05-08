@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { Link } from './link';
 
 interface Props {
@@ -9,7 +8,9 @@ interface Props {
 
 const baseItemClassName = 'p-1 mx-1 rounded';
 
-const isActive = (href: string, exact?: boolean) => {
+const isActive = (href: string, exact?: boolean): boolean => {
+  if (typeof window === 'undefined') return false;
+
   switch (exact) {
     case true:
       return href === window.location.pathname;

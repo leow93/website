@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
+import 'tailwindcss/tailwind.css';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import utilStyles from '../styles/utils.module.css';
 import Layout from '../components/layout';
-import Link from 'next/link';
 import Navbar from '../components/navbar';
+import { Link } from '../components/link';
 
 const MyFace = () => (
   <Image
@@ -28,20 +27,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <header className={styles.header}>
+      <header className="flex flex-col items-center">
         <MyFace />
-        <h1 className={utilStyles.heading2Xl}>Leo Wheelan</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight my-4">
+          Leo Wheelan
+        </h1>
       </header>
 
-      <main className={styles.main}>
-        <section className={utilStyles.headingMd}>
-          <p className={styles.intro}>
+      <main className="flex flex-col justify-center align-center">
+        <section className="text-xl">
+          <p className="text-center">
             Hello, welcome to my website. I&apos;m a software engineer currently
-            working at{' '}
-            <Link href="https://birdie.care">
-              <a>Birdie</a>
-            </Link>
-            .
+            working at <Link href="https://birdie.care" text="Birdie" />.
           </p>
         </section>
       </main>

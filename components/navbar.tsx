@@ -1,23 +1,40 @@
-import styles from './navbar.module.css';
-import Link from 'next/link';
+import { useMemo } from 'react';
+import { Link } from './link';
 
 interface Props {
   name: string;
   href: string;
+  exact?: boolean;
 }
 
-const Item = ({ name, href }: Props) => (
-  <div className={styles.item}>
-    <Link href={href}>
-      <a href={href}>{name}</a>
-    </Link>
-  </div>
-);
+const baseItemClassName = 'p-1 mx-1 rounded';
 
+const isActive = (href: string, exact?: boolean) => {
+  switch (exact) {
+    case true:
+      return href === window.location.pathname;
+    case false:
+    case undefined:
+      return window.location.pathname.startsWith(href);
+  }
+};
+
+const getClassName = (href: string, exact?: boolean) =>
+  isActive(href, exact) ? baseItemClassName + ' italic' : baseItemClassName;
+
+const Item = ({ name, href, exact }: Props) => {
+  const className = getClassName(href, exact);
+  return (
+    <div className={className}>
+      <Link href={href} text={name} />
+    </div>
+  );
+};
 const Navbar = () => {
   return (
-    <div className={styles.container}>
-      <Item href="/about" name="About" />
+    <div className="flex items-center justify-end w-full">
+      <Item href="/" name="Home" exact />
+      <Item href="/about" name="About" exact />
       <Item href="/posts" name="Blog" />
     </div>
   );

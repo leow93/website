@@ -1,10 +1,9 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import Footer from '../../components/footer';
-import utilStyles from '../../styles/utils.module.css';
 import { Post } from '../api/posts';
+import { Link } from '../../components/link';
+import Navbar from '../../components/navbar';
 
 export const post: Post = {
   path: 'first-post',
@@ -21,15 +20,17 @@ const FirstPost: NextPage = () => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <h1>{post.title}</h1>
-      <div className={utilStyles.row}>
-        <h4 className={utilStyles.lightText}>
+      <Navbar />
+      <h1 className="text-4xl font-extrabold tracking-tight my-4">
+        {post.title}
+      </h1>
+      <div className="flex items-center justify-between">
+        <h4 className="text-gray-500 font-mono">
           Published on {new Date(post.publishedDate).toLocaleDateString()}
         </h4>
-        <h4 className={utilStyles.lightText}>by {post.author}</h4>
       </div>
 
-      <h2>Motivation</h2>
+      <h2 className="text-2xl font-bold mt-4 mb-2">Motivation</h2>
       <p>
         Despite being a software engineer for around 6 years, I&apos;d never
         actually deployed a website from scratch before. I saw this as a
@@ -37,36 +38,22 @@ const FirstPost: NextPage = () => {
         this site can serve as a repository for these thoughts.
       </p>
 
-      <h2>Technical details</h2>
+      <h2 className="text-2xl font-bold mt-4 mb-2">Technical details</h2>
 
       <p>
         The site is hosted by{' '}
-        <Link href="https://www.netlify.com/">
-          <a className={utilStyles.link}>Netlify</a>
-        </Link>
+        <Link href="https://www.netlify.com/" text="Netlify" />
       </p>
 
       <p>
         I acquired the domain through{' '}
-        <Link href="https://www.namecheap.com/">
-          <a className={utilStyles.link}>Namecheap</a>
-        </Link>
+        <Link href="https://www.namecheap.com/" text="Namecheap" />
       </p>
 
       <p>
         And I built the content using{' '}
-        <Link href="https://nextjs.org/">
-          <a className={utilStyles.link}>NextJS</a>
-        </Link>
+        <Link href="https://nextjs.org/" text="NextJS" />
       </p>
-
-      <Footer>
-        <h3>
-          <Link href="/">
-            <a>Back to home</a>
-          </Link>
-        </h3>
-      </Footer>
     </Layout>
   );
 };

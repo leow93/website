@@ -1,23 +1,15 @@
 import Layout from '../components/layout';
-import Link from 'next/link';
 import Head from 'next/head';
-import Footer from '../components/footer';
+import Navbar from '../components/navbar';
 
 const About = () => (
   <Layout>
     <Head>
       <title>About</title>
     </Head>
-    <h1>About</h1>
-    <h2>Under construction 🔨</h2>
-
-    <Footer>
-      <h3>
-        <Link href="/">
-          <a>Back to home</a>
-        </Link>
-      </h3>
-    </Footer>
+    <Navbar />
+    <h1 className="text-4xl font-extrabold tracking-tight my-4">About</h1>
+    <h2 className="text-2xl font-bold">Under construction 🔨</h2>
   </Layout>
 );
 

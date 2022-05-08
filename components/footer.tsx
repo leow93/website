@@ -1,8 +1,7 @@
 import { PropsWithChildren } from 'react';
-import styles from './footer.module.css';
 
 const Footer = ({ children }: PropsWithChildren<any>) => {
-  return <div className={styles.footer}>{children}</div>;
+  return <div className="py-16 h-16">{children}</div>;
 };
 
 export default Footer;

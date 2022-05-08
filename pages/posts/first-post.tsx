@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../../components/layout';
 import Footer from '../../components/footer';
 import utilStyles from '../../styles/utils.module.css';
 import { Post } from '../api/posts';
+import { Link } from '../../components/link';
 
 export const post: Post = {
   path: 'first-post',
@@ -41,30 +41,22 @@ const FirstPost: NextPage = () => {
 
       <p>
         The site is hosted by{' '}
-        <Link href="https://www.netlify.com/">
-          <a className={utilStyles.link}>Netlify</a>
-        </Link>
+        <Link href="https://www.netlify.com/" text="Netlify" />
       </p>
 
       <p>
         I acquired the domain through{' '}
-        <Link href="https://www.namecheap.com/">
-          <a className={utilStyles.link}>Namecheap</a>
-        </Link>
+        <Link href="https://www.namecheap.com/" text="Namecheap" />
       </p>
 
       <p>
         And I built the content using{' '}
-        <Link href="https://nextjs.org/">
-          <a className={utilStyles.link}>NextJS</a>
-        </Link>
+        <Link href="https://nextjs.org/" text="NextJS" />
       </p>
 
       <Footer>
         <h3>
-          <Link href="/">
-            <a>Back to home</a>
-          </Link>
+          <Link href="/" text="Back to home" />
         </h3>
       </Footer>
     </Layout>

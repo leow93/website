@@ -1,5 +1,4 @@
-import styles from './navbar.module.css';
-import Link from 'next/link';
+import { Link } from './link';
 
 interface Props {
   name: string;
@@ -7,16 +6,14 @@ interface Props {
 }
 
 const Item = ({ name, href }: Props) => (
-  <div className={styles.item}>
-    <Link href={href}>
-      <a href={href}>{name}</a>
-    </Link>
+  <div className="p-1 mx-1 rounded">
+    <Link href={href} text={name} />
   </div>
 );
 
 const Navbar = () => {
   return (
-    <div className={styles.container}>
+    <div className="flex items-center justify-end w-full">
       <Item href="/about" name="About" />
       <Item href="/posts" name="Blog" />
     </div>

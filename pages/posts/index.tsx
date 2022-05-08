@@ -1,16 +1,18 @@
 import Layout from '../../components/layout';
-import Link from 'next/link';
 import Head from 'next/head';
 import { post as firstPost } from './first-post';
 import Footer from '../../components/footer';
 import { BlogPostCard } from '../../components/card';
 import React, { useEffect, useState } from 'react';
 import { Post } from '../api/posts';
+import NextLink from 'next/link';
+import { Link } from '../../components/link';
 
 export const posts: Post[] = [firstPost];
-
+const sleep = (ms = 100) => new Promise((r) => setTimeout(r, ms));
 const fetchPosts = (): Promise<Post[]> =>
-  fetch('/api/posts').then((x) => x.json());
+  sleep(500).then(() => fetch('/api/posts').then((x) => x.json()));
+
 const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(false);
@@ -32,24 +34,20 @@ const Posts = () => {
       <Head>
         <title>Blog</title>
       </Head>
-      <h1>Blog</h1>
+      <h1 className="text-4xl font-extrabold tracking-tight mt-4 mb-8">Blog</h1>
       {loading && <h4>Loading...</h4>}
       {p.map((post) => (
-        <Link passHref key={post.path} href={`/posts/${post.path}`}>
+        <NextLink passHref key={post.path} href={`/posts/${post.path}`}>
           <BlogPostCard
             header={new Date(post.publishedDate).toLocaleDateString()}
             title={post.title}
             description={post.description}
           />
-        </Link>
+        </NextLink>
       ))}
 
       <Footer>
-        <h3>
-          <Link href="/">
-            <a>Back to home</a>
-          </Link>
-        </h3>
+        <Link href="/" text="Back to home" />
       </Footer>
     </Layout>
   );

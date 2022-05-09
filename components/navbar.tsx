@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Link } from './link';
 
@@ -33,12 +34,43 @@ const Item = ({ name, href, exact }: Props) => {
     </div>
   );
 };
+
+const Github = () => (
+  <a href="https://github.com/leow93">
+    <Image
+      className="cursor-pointer"
+      src="/images/github.svg" // Route of the image file
+      height={16} // Desired size with correct aspect ratio
+      width={16} // Desired size with correct aspect ratio
+      alt="GitHub"
+    />
+  </a>
+);
+
+// const LinkedIn = () => (
+//   <a className="ml-4" href="https://www.linkedin.com/in/leo-wheelan93/">
+//     <Image
+//       className="cursor-pointer"
+//       src="/images/linkedin.svg" // Route of the image file
+//       height={16} // Desired size with correct aspect ratio
+//       width={16} // Desired size with correct aspect ratio
+//       alt="GitHub"
+//     />
+//   </a>
+// );
+
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-end w-full">
-      <Item href="/" name="Home" exact />
-      <Item href="/about" name="About" exact />
-      <Item href="/posts" name="Blog" />
+    <div className="flex items-center justify-between w-full">
+      <div className="flex-grow">
+        <Github />
+        {/* <LinkedIn /> */}
+      </div>
+      <div className="flex items-center justify-end flex-grow-0">
+        <Item href="/" name="Home" exact />
+        <Item href="/about" name="About" exact />
+        <Item href="/posts" name="Blog" />
+      </div>
     </div>
   );
 };

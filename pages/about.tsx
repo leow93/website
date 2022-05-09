@@ -8,8 +8,12 @@ const About = () => (
       <title>About</title>
     </Head>
     <Navbar />
-    <h1 className="text-4xl font-extrabold tracking-tight my-4">About</h1>
-    <h2 className="text-2xl font-bold">Under construction 🔨</h2>
+    <h1 className="text-4xl dark:text-slate-50 font-extrabold tracking-tight my-4">
+      About
+    </h1>
+    <h2 className="text-2xl dark:text-slate-50 font-bold">
+      Under construction 🔨
+    </h2>
   </Layout>
 );
 

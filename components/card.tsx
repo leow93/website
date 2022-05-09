@@ -9,16 +9,21 @@ interface Props {
   href?: string;
 }
 
-const className = 'flex flex-col w-full border rounded border-gray-300 p-4';
+const className =
+  'flex flex-col w-full rounded shadow-lg p-4 bg-slate-50 dark:bg-slate-600';
 
 const Card = (props: PropsWithChildren<Props>) => {
   const children = (
     <>
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold">{props.title}</h2>
-        <h3 className="text-sm text-gray-600 font-bold">{props.header}</h3>
+        <h2 className="text-xl dark:text-slate-50 font-bold">{props.title}</h2>
+        <h3 className="text-sm dark:text-slate-100 font-bold">
+          {props.header}
+        </h3>
       </div>
-      <p className="text-gray-700 mt-4">{props.description}</p>
+      <p className="text-gray-700 dark:text-stone-50 mt-4">
+        {props.description}
+      </p>
     </>
   );
   return props.href ? (

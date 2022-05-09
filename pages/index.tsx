@@ -29,14 +29,14 @@ const Home: NextPage = () => {
       <Navbar />
       <header className="flex flex-col items-center">
         <MyFace />
-        <h1 className="text-4xl font-extrabold tracking-tight my-4">
+        <h1 className="text-4xl dark:text-slate-50 font-extrabold tracking-tight my-4">
           Leo Wheelan
         </h1>
       </header>
 
       <main className="flex flex-col justify-center align-center">
-        <section className="text-xl">
-          <p className="text-center">
+        <section className="text-xl dark:text-slate-50">
+          <p className="text-center dark:text-slate-50">
             Hello, welcome to my website. I&apos;m a software engineer currently
             working at <Link href="https://birdie.care" text="Birdie" />.
           </p>

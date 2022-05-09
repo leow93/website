@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from './link';
 
 interface Props {
@@ -10,7 +11,6 @@ const baseItemClassName = 'p-1 mx-1 rounded';
 
 const isActive = (href: string, exact?: boolean): boolean => {
   if (typeof window === 'undefined') return false;
-
   switch (exact) {
     case true:
       return href === window.location.pathname;
@@ -24,7 +24,9 @@ const getClassName = (href: string, exact?: boolean) =>
   isActive(href, exact) ? baseItemClassName + ' italic' : baseItemClassName;
 
 const Item = ({ name, href, exact }: Props) => {
-  const className = getClassName(href, exact);
+  const [className, setClassName] = useState(baseItemClassName);
+  useEffect(() => setClassName(getClassName(href, exact)), []);
+
   return (
     <div className={className}>
       <Link href={href} text={name} />

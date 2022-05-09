@@ -4,8 +4,8 @@ interface Props {
   header: string;
   title: string;
   description: string;
-  ref?: ForwardedRef<any>;
   onClick?: () => void;
+  linkRef?: ForwardedRef<any>;
   href?: string;
 }
 
@@ -22,18 +22,23 @@ const Card = (props: PropsWithChildren<Props>) => {
     </>
   );
   return props.href ? (
-    <a className={className} onClick={props.onClick} href={props.href}>
+    <a
+      className={className}
+      onClick={props.onClick}
+      href={props.href}
+      ref={props.linkRef}
+    >
       {children}
     </a>
   ) : (
-    <div className={className} onClick={props.onClick}>
+    <div className={className} onClick={props.onClick} ref={props.linkRef}>
       {children}
     </div>
   );
 };
 
 export const BlogPostCard = React.forwardRef<undefined, Props>((props, ref) => (
-  <Card ref={ref} {...(props as any)} />
+  <Card {...(props as any)} linkRef={ref} />
 ));
 
 export default Card;

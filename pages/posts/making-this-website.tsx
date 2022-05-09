@@ -37,21 +37,22 @@ const FirstPost: NextPage = () => {
         this site can serve as a repository for these thoughts.
       </p>
 
-      <h2 className="text-2xl font-bold mt-4 mb-2">Technical details</h2>
+      <hr className="my-4" />
 
-      <p>
-        The site is hosted by{' '}
-        <Link href="https://www.netlify.com/" text="Netlify" />
-      </p>
-
-      <p>
+      <p className="my-1">
         I acquired the domain through{' '}
-        <Link href="https://www.namecheap.com/" text="Namecheap" />
+        <Link href="https://www.namecheap.com/" text="Namecheap" />.
       </p>
 
-      <p>
-        And I built the content using{' '}
-        <Link href="https://nextjs.org/" text="NextJS" />
+      <p className="my-2">
+        Then I used <Link href="https://www.netlify.com/" text="Netlify" /> to
+        cover my hosting needs.
+      </p>
+
+      <p className="my-2">
+        The content itself is built using{' '}
+        <Link href="https://nextjs.org/" text="NextJS" /> and{' '}
+        <Link href="https://v2.tailwindcss.com" text="Tailwind" />.
       </p>
     </Layout>
   );

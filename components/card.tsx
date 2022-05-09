@@ -10,14 +10,14 @@ interface Props {
 }
 
 const className =
-  'flex flex-col w-full rounded shadow-lg p-4 bg-blue-50 dark:bg-slate-600';
+  'flex flex-col w-full rounded shadow-lg p-4 bg-slate-50 dark:bg-slate-600';
 
 const Card = (props: PropsWithChildren<Props>) => {
   const children = (
     <>
       <div className="flex items-center justify-between">
         <h2 className="text-xl dark:text-slate-50 font-bold">{props.title}</h2>
-        <h3 className="text-sm text-gray-600 dark:text-slate-100 font-bold">
+        <h3 className="text-sm dark:text-slate-100 font-bold">
           {props.header}
         </h3>
       </div>

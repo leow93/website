@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
-type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark';
 interface ThemeContext {
   theme: Theme;
   setTheme: (t: Theme) => void;
@@ -14,5 +14,6 @@ const initialValue: ThemeContext = {
 export const ThemeContext = React.createContext(initialValue);
 export const ThemeProvider = ThemeContext.Provider;
 export const useTheme = () => {
-  return useState<Theme>('light');
+  const { theme, setTheme } = useContext(ThemeContext);
+  return [theme, setTheme] as const;
 };

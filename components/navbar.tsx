@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
-import { ThemeContext, useTheme } from '../hooks/useTheme';
+import { ThemeContext } from '../hooks/useTheme';
+import { Github } from './github';
 import { Link } from './link';
 
 interface Props {
@@ -36,18 +36,6 @@ const Item = ({ name, href, exact }: Props) => {
   );
 };
 
-const Github = () => (
-  <a href="https://github.com/leow93">
-    <Image
-      className="cursor-pointer"
-      src="/images/github.svg" // Route of the image file
-      height={16} // Desired size with correct aspect ratio
-      width={16} // Desired size with correct aspect ratio
-      alt="GitHub"
-    />
-  </a>
-);
-
 // const LinkedIn = () => (
 //   <a className="ml-4" href="https://www.linkedin.com/in/leo-wheelan93/">
 //     <Image
@@ -62,8 +50,6 @@ const Github = () => (
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-  console.log('theme', theme);
-
   return theme === 'light' ? (
     <svg
       onClick={() => setTheme('dark')}

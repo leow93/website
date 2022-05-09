@@ -39,7 +39,7 @@ const FirstPost: NextPage = () => {
         this site can serve as a repository for these thoughts.
       </p>
 
-      <hr className="my-4" />
+      <hr className="my-4 dark:border-slate-400" />
 
       <p className="my-1 dark:text-slate-50">
         I acquired the domain through{' '}

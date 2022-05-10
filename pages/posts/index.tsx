@@ -1,11 +1,9 @@
-import Layout from '../../components/layout';
-import Head from 'next/head';
 import { post as firstPost } from './making-this-website';
 import { BlogPostCard } from '../../components/card';
 import React, { useEffect, useState } from 'react';
 import { Post } from '../api/posts';
 import NextLink from 'next/link';
-import Navbar from '../../components/navbar';
+import Page from '../../components/page';
 
 export const posts: Post[] = [firstPost];
 const fetchPosts = (): Promise<Post[]> =>
@@ -28,11 +26,7 @@ const Posts = () => {
   const [p, loading] = usePosts();
 
   return (
-    <Layout>
-      <Head>
-        <title>Blog</title>
-      </Head>
-      <Navbar />
+    <Page title="Blog">
       <h1 className="text-4xl dark:text-slate-50 font-extrabold tracking-tight mt-4 mb-8">
         Blog
       </h1>
@@ -46,7 +40,7 @@ const Posts = () => {
           />
         </NextLink>
       ))}
-    </Layout>
+    </Page>
   );
 };
 

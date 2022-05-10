@@ -1,9 +1,7 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Layout from '../../components/layout';
 import { Post } from '../api/posts';
 import { Link } from '../../components/link';
-import Navbar from '../../components/navbar';
+import Page from '../../components/page';
 
 export const post: Post = {
   path: 'making-this-website',
@@ -15,11 +13,7 @@ export const post: Post = {
 
 const FirstPost: NextPage = () => {
   return (
-    <Layout>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
-      <Navbar />
+    <Page title={post.title}>
       <h1 className="text-4xl dark:text-slate-50 font-extrabold tracking-tight my-4">
         {post.title}
       </h1>
@@ -56,7 +50,7 @@ const FirstPost: NextPage = () => {
         <Link href="https://nextjs.org/" text="NextJS" /> and{' '}
         <Link href="https://v2.tailwindcss.com" text="Tailwind" />.
       </p>
-    </Layout>
+    </Page>
   );
 };
 

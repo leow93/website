@@ -36,7 +36,7 @@ const Posts = () => {
       <h1 className="text-4xl dark:text-slate-50 font-extrabold tracking-tight mt-4 mb-8">
         Blog
       </h1>
-      {loading && <h4>Loading...</h4>}
+      {loading && <h4 className="dark:text-slate-50">Loading...</h4>}
       {p.map((post) => (
         <NextLink passHref key={post.path} href={`/posts/${post.path}`}>
           <BlogPostCard

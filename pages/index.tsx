@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
 import 'tailwindcss/tailwind.css';
-import Head from 'next/head';
 import Image from 'next/image';
-import Layout from '../components/layout';
-import Navbar from '../components/navbar';
 import { Link } from '../components/link';
+import Page from '../components/page';
 
 const MyFace = () => (
   <Image
@@ -20,13 +18,7 @@ const MyFace = () => (
 
 const Home: NextPage = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Leo Wheelan</title>
-        <meta name="description" content="Leo Wheelan's website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
+    <Page>
       <header className="flex flex-col items-center">
         <MyFace />
         <h1 className="text-4xl dark:text-slate-50 font-extrabold tracking-tight my-4">
@@ -42,7 +34,7 @@ const Home: NextPage = () => {
           </p>
         </section>
       </main>
-    </Layout>
+    </Page>
   );
 };
 

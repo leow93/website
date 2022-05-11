@@ -5,7 +5,7 @@ interface Props {
 }
 export const Link = ({ href, text }: Props) => (
   <NextLink href={href}>
-    <a className="text-blue-600 dark:text-slate-50 font-bold box-border max-w-xs hover:text-blue-700 underline hover:no-underline">
+    <a className="text-blue-500 dark:text-neutral-50 dark:hover:text-neutral-100 font-bold box-border max-w-xs hover:text-blue-600 underline hover:no-underline">
       {text}
     </a>
   </NextLink>

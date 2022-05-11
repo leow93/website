@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from './navbar';
 import { FC, PropsWithChildren } from 'react';
+import nightwind from 'nightwind/helper';
 
 const darkBg = 'dark:bg-slate-800';
 const Layout = ({ children }: PropsWithChildren<any>) => {
@@ -27,6 +28,7 @@ const Page: FC<PropsWithChildren<Props>> = ({
         <meta name="description" content="Leo Wheelan's website" />
         <meta name="author" content="Leo Wheelan" />
         <link rel="icon" href="/favicon.ico" />
+        <script dangerouslySetInnerHTML={{ __html: nightwind.init() }} />
       </Head>
       <Navbar />
       {children}

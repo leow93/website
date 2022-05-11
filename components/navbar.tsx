@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Github } from './github';
 import { Link } from './link';
+import { LinkedIn } from './linkedin';
 import { ThemeToggle } from './theme-toggle';
 
 interface Props {
@@ -36,24 +37,12 @@ const Item = ({ name, href, exact }: Props) => {
   );
 };
 
-// const LinkedIn = () => (
-//   <a className="ml-4" href="https://www.linkedin.com/in/leo-wheelan93/">
-//     <Image
-//       className="cursor-pointer"
-//       src="/images/linkedin.svg" // Route of the image file
-//       height={16} // Desired size with correct aspect ratio
-//       width={16} // Desired size with correct aspect ratio
-//       alt="GitHub"
-//     />
-//   </a>
-// );
-
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between w-full">
-      <div className="flex-grow">
+      <div className="flex">
         <Github />
-        {/* <LinkedIn /> */}
+        <LinkedIn />
       </div>
       <div className="flex items-center justify-end flex-grow-0">
         <Item href="/" name="Home" exact />

@@ -27,7 +27,7 @@ const getClassName = (href: string, exact?: boolean) =>
 
 const Item = ({ name, href, exact }: Props) => {
   const [className, setClassName] = useState(baseItemClassName);
-  useEffect(() => setClassName(getClassName(href, exact)), []);
+  useEffect(() => setClassName(getClassName(href, exact)), [href, exact]);
 
   return (
     <div className={className}>

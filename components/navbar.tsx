@@ -46,7 +46,6 @@ const Navbar = () => {
       </div>
       <div className="flex items-center justify-end flex-grow-0">
         <Item href="/" name="Home" exact />
-        <Item href="/about" name="About" exact />
         <Item href="/posts" name="Blog" />
         <ThemeToggle />
       </div>

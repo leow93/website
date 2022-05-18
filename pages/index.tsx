@@ -27,10 +27,22 @@ const Home: NextPage = () => {
       </header>
 
       <main className="flex flex-col justify-center align-center">
-        <section className="text-xl dark:text-slate-50">
-          <p className="text-center dark:text-slate-50">
-            Hello, welcome to my website. I&apos;m a software engineer currently
-            working at <Link href="https://birdie.care" text="Birdie" />.
+        <section>
+          <p className="text-center text-xl dark:text-slate-50">
+            Hello, welcome to my website. I&apos;m a software engineer living in
+            London and working at{' '}
+            <Link href="https://birdie.care" text="Birdie" /> - we&apos;re
+            trying to make vast improvements in social care. Check out{' '}
+            <Link
+              href="https://apply.workable.com/birdie/"
+              text="our job board"
+            />{' '}
+            if that sounds like something youd like to do! Alternatively, feel
+            free to{' '}
+            <Link
+              href="mailto:leowheelan93@gmail.com"
+              text="reach out to me via email."
+            />
           </p>
         </section>
       </main>

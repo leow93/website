@@ -1,11 +1,9 @@
-import { post as firstPost } from './making-this-website';
 import { BlogPostCard } from '../../components/card';
 import React, { useEffect, useState } from 'react';
-import { Post } from '../api/posts';
 import NextLink from 'next/link';
 import Page from '../../components/page';
+import { Post } from '../common/posts';
 
-export const posts: Post[] = [firstPost];
 const fetchPosts = (): Promise<Post[]> =>
   fetch('/api/posts').then((x) => x.json());
 
@@ -31,15 +29,17 @@ const Posts = () => {
         Blog
       </h1>
       {loading && <h4 className="dark:text-slate-50">Loading...</h4>}
-      {p.map((post) => (
-        <NextLink passHref key={post.path} href={`/posts/${post.path}`}>
-          <BlogPostCard
-            header={new Date(post.publishedDate).toLocaleDateString()}
-            title={post.title}
-            description={post.description}
-          />
-        </NextLink>
-      ))}
+      <div className="space-y-8">
+        {p.map((post) => (
+          <NextLink passHref key={post.path} href={`/posts/${post.path}`}>
+            <BlogPostCard
+              header={new Date(post.publishedDate).toLocaleDateString()}
+              title={post.title}
+              description={post.description}
+            />
+          </NextLink>
+        ))}
+      </div>
     </Page>
   );
 };

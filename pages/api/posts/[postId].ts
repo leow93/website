@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getAll, getById } from './db';
-import { Post } from '../../common/posts';
+import { Post } from '../../../common/posts';
 
 interface NotFound {
   status: 404;

@@ -2,7 +2,7 @@ import { BlogPostCard } from '../../components/card';
 import React, { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import Page from '../../components/page';
-import { Post } from '../common/posts';
+import { Post } from '../../common/posts';
 
 const fetchPosts = (): Promise<Post[]> =>
   fetch('/api/posts').then((x) => x.json());

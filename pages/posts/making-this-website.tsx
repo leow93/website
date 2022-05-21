@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { Link } from '../../components/link';
 import Page from '../../components/page';
 import { useEffect, useState } from 'react';
-import { Post } from '../common/posts';
+import { Post } from '../../common/posts';
 
 const fetchPost = (): Promise<Post> =>
   fetch('/api/posts/making-this-website').then((x) => x.json());

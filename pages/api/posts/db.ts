@@ -1,4 +1,4 @@
-import { Post } from '../../common/posts';
+import { Post } from '../../../common/posts';
 
 export const byDate =
   <T>(fn: (x: T) => Date, direction: 'asc' | 'desc' = 'asc') =>

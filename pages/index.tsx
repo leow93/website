@@ -37,8 +37,8 @@ const Home: NextPage = () => {
               href="https://apply.workable.com/birdie/"
               text="our job board"
             />{' '}
-            if that sounds like something youd like to do! Alternatively, feel
-            free to{' '}
+            if that sounds like something you&apos;d like to do! Alternatively,
+            feel free to{' '}
             <Link
               href="mailto:leowheelan93@gmail.com"
               text="reach out to me via email."

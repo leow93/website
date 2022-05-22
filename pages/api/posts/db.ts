@@ -26,7 +26,7 @@ const posts: Post[] = [
     title: 'Mob programming',
     author: 'Leo Wheelan',
     description: 'My experience with mob programming over the last 18 months',
-    draft: true,
+    draft: false,
   },
 ].sort(byDate((x) => new Date(x.publishedDate), 'desc'));
 
